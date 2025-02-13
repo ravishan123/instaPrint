@@ -1,5 +1,17 @@
 import React, { useState } from 'react';
-import { Camera, Image, PlayCircle, Printer, Heart, Star, Instagram, Facebook, Twitter, Apple as WhatsApp, Mail, Clock, ChevronRight } from 'lucide-react';
+import CameraAltIcon from '@mui/icons-material/CameraAlt';
+import ImageIcon from '@mui/icons-material/Image';
+import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import PrintIcon from '@mui/icons-material/Print';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import StarIcon from '@mui/icons-material/Star';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import MailIcon from '@mui/icons-material/Mail';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,6 +35,41 @@ function App() {
     }
   ];
 
+  const photoStrips = [
+    {
+      photos: [
+        "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7",
+        "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3",
+        "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf"
+      ],
+      eventName: "Sarah & John's Wedding"
+    },
+    {
+      photos: [
+        "https://images.unsplash.com/photo-1511795409834-ef04bbd61622",
+        "https://images.unsplash.com/photo-1470897655254-05feb2d2ab97",
+        "https://images.unsplash.com/photo-1470753937643-efeb931202a9"
+      ],
+      eventName: "Corporate Party 2025"
+    },
+    {
+      photos: [
+        "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7",
+        "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3",
+        "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf"
+      ],
+      eventName: "Birthday Bash"
+    },
+    {
+      photos: [
+        "https://images.unsplash.com/photo-1511795409834-ef04bbd61622",
+        "https://images.unsplash.com/photo-1470897655254-05feb2d2ab97",
+        "https://images.unsplash.com/photo-1470753937643-efeb931202a9"
+      ],
+      eventName: "New Year's Eve"
+    }
+  ];
+
   const galleryImages = [
     "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=600&h=400",
     "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=600&h=400",
@@ -39,7 +86,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             <div className="flex-shrink-0 flex items-center">
-              <Camera className="h-8 w-8 text-pink-500" />
+              <CameraAltIcon className="h-8 w-8 text-pink-500" />
               <span className="ml-2 text-xl font-bold text-gray-900">SnapJoy Booth</span>
             </div>
             
@@ -80,7 +127,7 @@ function App() {
             className="inline-flex items-center bg-pink-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-pink-600 transition-colors"
           >
             Book Now
-            <ChevronRight className="ml-2 h-5 w-5" />
+            <ChevronRightIcon className="ml-2 h-5 w-5" />
           </a>
         </div>
       </section>
@@ -98,19 +145,19 @@ function App() {
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-xl shadow-sm text-center">
-              <Camera className="w-12 h-12 text-pink-500 mx-auto mb-4" />
+              <CameraAltIcon className="w-12 h-12 text-pink-500 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Premium Equipment</h3>
               <p className="text-gray-600">Professional DSLR cameras and lighting for studio-quality photos</p>
             </div>
             
             <div className="bg-white p-8 rounded-xl shadow-sm text-center">
-              <Printer className="w-12 h-12 text-pink-500 mx-auto mb-4" />
+              <PrintIcon className="w-12 h-12 text-pink-500 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Instant Prints</h3>
               <p className="text-gray-600">High-quality prints in seconds with our professional printers</p>
             </div>
             
             <div className="bg-white p-8 rounded-xl shadow-sm text-center">
-              <Heart className="w-12 h-12 text-pink-500 mx-auto mb-4" />
+              <FavoriteIcon className="w-12 h-12 text-pink-500 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Fun Props</h3>
               <p className="text-gray-600">Wide selection of props and backgrounds for endless creativity</p>
             </div>
@@ -123,70 +170,51 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center mb-16">Capture Your Style</h2>
           
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Photo Strip Format */}
-            <div className="group relative">
-              <div className="relative bg-white p-6 rounded-2xl shadow-xl transform group-hover:-rotate-2 transition-transform duration-300">
-                <div className="aspect-[3/5] bg-white rounded-xl overflow-hidden shadow-lg">
-                  {/* Strip Photos Container */}
-                  <div className="space-y-2 p-3">
-                    {/* Photo 1 */}
-                    <div className="relative aspect-square rounded-lg overflow-hidden">
-                      <img
-                        src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=400&h=400"
-                        alt="Strip Photo 1"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    
-                    {/* Photo 2 */}
-                    <div className="relative aspect-square rounded-lg overflow-hidden">
-                      <img
-                        src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=400&h=400"
-                        alt="Strip Photo 2"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    
-                    {/* Photo 3 */}
-                    <div className="relative aspect-square rounded-lg overflow-hidden">
-                      <img
-                        src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=400&h=400"
-                        alt="Strip Photo 3"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    
-                    {/* Event Logo */}
-                    <div className="mt-4 p-3 text-center border-t border-gray-200">
-                      <div className="flex items-center justify-center space-x-2">
-                        <Camera className="w-6 h-6 text-pink-500" />
-                        <span className="font-bold text-gray-800">Your Event Name</span>
-                      </div>
-                      <p className="text-sm text-gray-500 mt-1">DD.MM.YYYY</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="absolute -right-4 top-1/2 transform -translate-y-1/2 bg-pink-500 text-white py-6 px-4 rounded-r-xl">
-                  <p className="vertical-text transform rotate-180 text-sm font-semibold">PHOTO STRIP</p>
-                </div>
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Photo Strips Container */}
+            <div className="space-y-8">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Classic Photo Strips</h3>
+                <p className="text-gray-600">Three perfect moments in one stylish strip</p>
               </div>
               
-              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-gray-50 to-transparent" />
-              
-              <div className="mt-6 text-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Classic Photo Strip</h3>
-                <p className="text-gray-600">Three perfect moments + your event branding</p>
+              <div className="grid grid-cols-2 gap-8">
+                {photoStrips.map((strip, index) => (
+                  <div key={index} className="group relative">
+                    <div className="bg-white p-3 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-105">
+                      <div className="space-y-2">
+                        {strip.photos.map((photo, photoIndex) => (
+                          <div key={photoIndex} className="aspect-square rounded-lg overflow-hidden">
+                            <img
+                              src={`${photo}?auto=format&fit=crop&w=300&h=300`}
+                              alt={`Strip ${index + 1} Photo ${photoIndex + 1}`}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        ))}
+                        <div className="pt-2 border-t border-gray-100 text-center">
+                          <div className="flex items-center justify-center space-x-1">
+                            <CameraAltIcon className="w-4 h-4 text-pink-500" />
+                            <span className="text-sm font-medium text-gray-800">{strip.eventName}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
             
             {/* Thank You Card Format */}
             <div className="group relative">
-              <div className="relative bg-white p-6 rounded-2xl shadow-xl transform group-hover:rotate-2 transition-transform duration-300">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Elegant Thank You Card</h3>
+                <p className="text-gray-600">Premium single shot with custom branding</p>
+              </div>
+              
+              <div className="relative bg-white p-6 rounded-2xl shadow-xl transform transition-transform duration-300 hover:scale-105">
                 <div className="aspect-[7/5] bg-white rounded-xl overflow-hidden shadow-lg">
                   <div className="relative h-full">
-                    {/* Main Photo */}
                     <div className="h-4/5 overflow-hidden">
                       <img
                         src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&h=600"
@@ -195,10 +223,9 @@ function App() {
                       />
                     </div>
                     
-                    {/* Event Branding Bar */}
                     <div className="absolute bottom-0 left-0 right-0 h-1/5 bg-gradient-to-r from-pink-500 to-purple-500 flex items-center justify-between px-6">
                       <div className="flex items-center space-x-3">
-                        <Camera className="w-8 h-8 text-white" />
+                        <CameraAltIcon className="w-8 h-8 text-white" />
                         <div className="text-white">
                           <p className="font-bold">Thank You!</p>
                           <p className="text-sm opacity-90">For being part of our special day</p>
@@ -208,17 +235,6 @@ function App() {
                     </div>
                   </div>
                 </div>
-                
-                <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 bg-purple-500 text-white py-6 px-4 rounded-l-xl">
-                  <p className="vertical-text text-sm font-semibold">THANK YOU CARD</p>
-                </div>
-              </div>
-              
-              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-gray-50 to-transparent" />
-              
-              <div className="mt-6 text-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Elegant Thank You Card</h3>
-                <p className="text-gray-600">Premium single shot with custom branding</p>
               </div>
             </div>
           </div>
@@ -227,7 +243,7 @@ function App() {
           <div className="mt-20 grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl p-6 shadow-sm">
               <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-4">
-                <Image className="w-6 h-6 text-pink-500" />
+                <ImageIcon className="w-6 h-6 text-pink-500" />
               </div>
               <h4 className="text-lg font-semibold mb-2">High Resolution</h4>
               <p className="text-gray-600">Crystal clear photos that capture every detail</p>
@@ -235,7 +251,7 @@ function App() {
             
             <div className="bg-white rounded-xl p-6 shadow-sm">
               <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-4">
-                <Printer className="w-6 h-6 text-pink-500" />
+                <PrintIcon className="w-6 h-6 text-pink-500" />
               </div>
               <h4 className="text-lg font-semibold mb-2">Instant Printing</h4>
               <p className="text-gray-600">Get your photos in seconds</p>
@@ -243,7 +259,7 @@ function App() {
             
             <div className="bg-white rounded-xl p-6 shadow-sm">
               <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-4">
-                <Heart className="w-6 h-6 text-pink-500" />
+                <FavoriteIcon className="w-6 h-6 text-pink-500" />
               </div>
               <h4 className="text-lg font-semibold mb-2">Custom Branding</h4>
               <p className="text-gray-600">Add your event details and personal touch</p>
@@ -266,7 +282,7 @@ function App() {
                   className="w-full h-64 object-cover transition-transform group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <PlayCircle className="w-12 h-12 text-white" />
+                  <PlayCircleIcon className="w-12 h-12 text-white" />
                 </div>
               </div>
             ))}
@@ -282,7 +298,7 @@ function App() {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Camera className="w-8 h-8 text-white" />
+                <CameraAltIcon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Snap</h3>
               <p className="text-gray-600">Strike your best pose in our booth</p>
@@ -290,7 +306,7 @@ function App() {
             
             <div className="text-center">
               <div className="w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Image className="w-8 h-8 text-white" />
+                <ImageIcon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Choose</h3>
               <p className="text-gray-600">Select your favorite shot</p>
@@ -298,7 +314,7 @@ function App() {
             
             <div className="text-center">
               <div className="w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Printer className="w-8 h-8 text-white" />
+                <PrintIcon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Print</h3>
               <p className="text-gray-600">Get your instant prints</p>
@@ -306,7 +322,7 @@ function App() {
             
             <div className="text-center">
               <div className="w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Heart className="w-8 h-8 text-white" />
+                <FavoriteIcon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Enjoy</h3>
               <p className="text-gray-600">Share and cherish the memories</p>
@@ -338,7 +354,7 @@ function App() {
                     <p className="text-xl text-gray-600 mb-6">{testimonial.text}</p>
                     <div className="flex items-center justify-center mb-4">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                        <StarIcon key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                       ))}
                     </div>
                     <p className="font-semibold text-gray-900">{testimonial.name}</p>
@@ -414,7 +430,7 @@ function App() {
         rel="noopener noreferrer"
         className="fixed bottom-8 right-8 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors z-50"
       >
-        <WhatsApp className="w-6 h-6" />
+        <WhatsAppIcon className="w-6 h-6" />
       </a>
 
       {/* Footer */}
@@ -423,7 +439,7 @@ function App() {
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center mb-4">
-                <Camera className="h-8 w-8 text-pink-500" />
+                <CameraAltIcon className="h-8 w-8 text-pink-500" />
                 <span className="ml-2 text-xl font-bold">SnapJoy Booth</span>
               </div>
               <p className="text-gray-400">
@@ -435,11 +451,11 @@ function App() {
               <h3 className="text-lg font-semibold mb-4">Business Hours</h3>
               <div className="space-y-2 text-gray-400">
                 <div className="flex items-center">
-                  <Clock className="w-5 h-5 mr-2" />
+                  <AccessTimeIcon className="w-5 h-5 mr-2" />
                   <span>Mon-Fri: 9:00 AM - 6:00 PM</span>
                 </div>
                 <div className="flex items-center">
-                  <Clock className="w-5 h-5 mr-2" />
+                  <AccessTimeIcon className="w-5 h-5 mr-2" />
                   <span>Sat-Sun: 10:00 AM - 4:00 PM</span>
                 </div>
               </div>
@@ -449,13 +465,13 @@ function App() {
               <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
               <div className="flex space-x-4">
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Instagram className="w-6 h-6" />
+                  <InstagramIcon className="w-6 h-6" />
                 </a>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Facebook className="w-6 h-6" />
+                  <FacebookIcon className="w-6 h-6" />
                 </a>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Twitter className="w-6 h-6" />
+                  <TwitterIcon className="w-6 h-6" />
                 </a>
               </div>
             </div>
