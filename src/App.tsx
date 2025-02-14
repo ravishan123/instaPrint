@@ -1,27 +1,38 @@
-import React from 'react';
-import Navbar from './components/layout/Navbar';
-import Footer from './components/layout/Footer';
-import Hero from './components/sections/Hero';
-import About from './components/sections/About';
-import PhotoFormats from './components/sections/PhotoFormats';
-import Gallery from './components/sections/Gallery';
-import Testimonials from './components/sections/Testimonials';
-import Contact from './components/sections/Contact';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import React, { useEffect } from "react";
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
+import Hero from "./components/sections/Hero";
+import About from "./components/sections/About";
+import PhotoFormats from "./components/sections/PhotoFormats";
+import Gallery from "./components/sections/Gallery";
+import Testimonials from "./components/sections/Testimonials";
+import Contact from "./components/sections/Contact";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#ec4899', // pink-500
+      main: "#ec4899", // pink-500
     },
     secondary: {
-      main: '#6b7280', // gray-500
+      main: "#6b7280", // gray-500
     },
   },
 });
 
 function App() {
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = (e.clientX / window.innerWidth) * 100;
+      const y = (e.clientY / window.innerHeight) * 100;
+      document.documentElement.style.setProperty("--mouse-x", `${x}%`);
+      document.documentElement.style.setProperty("--mouse-y", `${y}%`);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
   return (
     <ThemeProvider theme={theme}>
       <div className="min-h-screen bg-white">
@@ -32,7 +43,7 @@ function App() {
         <Gallery />
         <Testimonials />
         <Contact />
-        
+
         {/* WhatsApp Button */}
         <a
           href="https://wa.me/1234567890"
