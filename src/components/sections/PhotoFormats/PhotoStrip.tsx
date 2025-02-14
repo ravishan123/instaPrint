@@ -22,7 +22,7 @@ const PhotoStrip = ({ photos, eventName }: PhotoStripProps) => {
           ))}
           <div className="pt-2 border-t border-gray-100 text-center">
             <div className="flex items-center justify-center space-x-1">
-              <CameraAltIcon className="w-4 h-4 text-pink-500" />
+              {/* <CameraAltIcon className="w-4 h-4 text-pink-500" /> */}
               <span className="text-sm font-medium text-gray-800">{eventName}</span>
             </div>
           </div>

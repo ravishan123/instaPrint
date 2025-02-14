@@ -36,7 +36,7 @@ const About = () => {
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800"
+                src="/img1.jpg"
                 alt="Photo Booth Experience"
                 className="w-full h-full object-cover"
               />
@@ -52,12 +52,15 @@ const About = () => {
           {/* Content Column */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-4xl font-bold mb-6">Creating Memories That Last Forever</h2>
+              <h2 className="text-4xl font-bold mb-6">
+                Creating Memories That Last Forever
+              </h2>
               <p className="text-gray-600 text-lg leading-relaxed">
-                At SnapJoy Booth, we believe every moment is worth capturing. Since 2018, 
-                we've been bringing joy and laughter to events across the country with our 
-                premium photo booth experiences. Our mission is to transform ordinary events 
-                into extraordinary memories.
+                At SnapJoy Booth, we believe every moment is worth capturing.
+                Since 2018, we've been bringing joy and laughter to events
+                across the country with our premium photo booth experiences. Our
+                mission is to transform ordinary events into extraordinary
+                memories.
               </p>
             </div>
 
@@ -65,11 +68,11 @@ const About = () => {
               {features.map((feature, index) => (
                 <div key={index} className="bg-white p-6 rounded-xl shadow-md">
                   <div className="bg-pink-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                    <div className="text-pink-500">
-                      {feature.icon}
-                    </div>
+                    <div className="text-pink-500">{feature.icon}</div>
                   </div>
-                  <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
+                  <h3 className="font-semibold text-lg mb-2">
+                    {feature.title}
+                  </h3>
                   <p className="text-gray-600">{feature.description}</p>
                 </div>
               ))}
