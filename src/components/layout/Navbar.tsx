@@ -1,6 +1,3 @@
-import React from "react";
-import CameraAltIcon from "@mui/icons-material/CameraAlt";
-
 const Navbar = () => {
   return (
     <nav className="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
