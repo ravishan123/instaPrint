@@ -36,7 +36,7 @@ const About = () => {
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="/img1.jpg"
+                src="https://photos.smugmug.com/90s-Retro-Night-99-Batch-Party/i-nvnxVGf/0/Mf64nhD6fbcqjjTh4SmPN85Thjsd33Fpn9WCQrMXk/X4/20241012_193857_563-X4.jpg"
                 alt="Photo Booth Experience"
                 className="w-full h-full object-cover"
               />
